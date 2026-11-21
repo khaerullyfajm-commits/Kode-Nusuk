@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daftar Kode NG</title>
+<style>
+:root{--bg:#f6f7f5;--fg:#1d2420;--mute:#66706a;--line:#dde2de;--card:#fff;--acc:#1f6f4a;--accfg:#fff;--done:#d9efe3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151a17;--fg:#e8ece9;--mute:#97a29b;--line:#2b342f;--card:#1d2420;--acc:#4cc58a;--accfg:#0e1a13;--done:#1e3a2c}}
+:root[data-theme="dark"]{--bg:#151a17;--fg:#e8ece9;--mute:#97a29b;--line:#2b342f;--card:#1d2420;--acc:#4cc58a;--accfg:#0e1a13;--done:#1e3a2c}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:12px 14px;border-bottom:1px solid var(--line);z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1{font-size:18px;margin:0 0 8px}
+.row{display:flex;gap:8px}
+input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
+button{font:inherit;border:0;border-radius:8px;cursor:pointer}
+#all,#rst{background:var(--fg);color:var(--bg);padding:10px 12px;white-space:nowrap}
+ul{list-style:none;margin:0;padding:6px 14px 40px;max-width:560px;margin-inline:auto}
+li{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
+li.used{background:var(--done)}li.used code{color:var(--mute);text-decoration:line-through}.c:disabled{background:var(--line);color:var(--mute);cursor:default}
+.n{width:2.4em;text-align:right;color:var(--mute);font-size:13px;flex:none}
+code{flex:1;font:17px ui-monospace,Menlo,Consolas,monospace;overflow-wrap:anywhere}
+.c{background:var(--acc);color:var(--accfg);padding:9px 14px;min-width:72px;flex:none}
+.c:focus-visible,#all:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+#empty{padding:24px 14px;color:var(--mute);text-align:center}
+</style>
+</head>
+<body>
+<header>
+<h1>Kode NG (<span id="cnt">763</span>)</h1>
+<div class="row"><input id="q" type="search" placeholder="Cari kode…" autocomplete="off"><button id="all">Salin semua</button><button id="rst">Reset</button></div>
+</header>
+<ul id="list"></ul>
+<div id="empty" hidden>Tidak ada kode yang cocok.</div>
+<script>
+var D="NG-NcHhmfmf NG-06tHvBmS NG-0Bvtyymr NG-0Rmn8W9t NG-0XDhUIJ8 NG-1DkDZbFf NG-1pK2Xl35 NG-1V2bynz7 NG-21JHrfnv8 NG-2bZF0UyA NG-2CLAqFM8 NG-2cnOqBkH NG-2kNk2rMQ NG-34xzTOSK NG-35Y1tjF5 NG-3JuEdqRS NG-3wlgOgTB NG-41Lm92xW NG-49WRqSpy NG-4AAwxW6N NG-4CxXlGVM NG-4dgEc52c NG-4L5W4867 NG-4SNNjhpU NG-51EXsIzt NG-5B14ikiZ NG-5i4ZvmZX NG-5QGPkjqj NG-5RugSaBX NG-689DjX0V NG-69xOx3nW NG-6CPi842t NG-6Ko2ro5P NG-6n64lGFp NG-6R86jzA0 NG-6XMKn4Pm NG-6zgnWEZA NG-72DYPU9J NG-7fEJHa2d NG-7SqN3l7W NG-86OUncxR NG-8AO85v14 NG-8Csa1AJl NG-8fDCajYc NG-8oehjZTk NG-9dITBkP3 NG-9dlTBkP3 NG-a0N7K8xn NG-a4KPK4zD NG-A9uC8606 NG-aCmbFQTj NG-afNWjqC1 NG-AIoGCTz3 NG-aoQo723o NG-aPKMGVwS NG-aPn55sjH NG-AsssiNZa NG-AuCuLDEL NG-AVFXh6oU NG-AWl4WM0u NG-AzRsbu4A NG-b505Bn5E NG-B6jGVnjw NG-bh3RExI7 NG-bKO4sKfO NG-bnCeJ01J NG-bVdUgL4W NG-C2EK41a8 NG-Cf3lcMJB NG-CkWPuYzD NG-CnH1iWas NG-cTTuApWx NG-cubxljWq NG-d4MZCxTb NG-D55s70CT NG-D71cpTgv NG-dBcbTS4w NG-dbkDn5fb NG-dbVCGD6m NG-DlehCizs NG-dQrCdsdA NG-dvIYKHHP NG-e5uUBCQJ NG-EcorSsFh NG-Ecs1TB5J NG-en6W3xIc NG-EnEYZVQ5 NG-ErwAtGjd NG-EXsuAj7T NG-FGC6enbH NG-FjeTAILI NG-FkEtmx8Y NG-fNNJ9ZSB NG-fpe3qAZi NG-FZxGZvax NG-gfKZTpKE NG-gh5Y8oDM NG-GOLKfuKg NG-gSHecw2q NG-GSWYE4gW NG-Gx6IPKjV NG-gYUrJ4Uk NG-h40StosJ NG-H4feS6yc NG-heIIjnoN NG-helljnoN NG-hMeu0YPY NG-HvXk4dWv NG-hzSYrpPv NG-ifDNtO7h NG-iHh3iQ1e NG-IPgqMbGP NG-iRxhkqxS NG-IRxKPtaj NG-IYGvLNQz NG-IylIeDni NG-iz18RDP0 NG-j0LIJqY9 NG-JbCRHDEi NG-jCehWicM NG-jRcqe4YT NG-JTyHwrwG NG-JWWhyNOA NG-JZgcYw86 NG-Kai1krbe NG-kaudeBvD NG-Kbakm4HS NG-knRTclGU NG-lcdcNigv NG-ldkYWKYZ NG-LEnjRLn1 NG-lh5YaKMO NG-LiTS46UN NG-ltPuCn86 NG-lx4yAem1 NG-lXpw09DJ NG-M7QCHm0X NG-Mc0CrH86 NG-mf25pYmv NG-mnFMxr7l NG-mvHIYkmF NG-mvhZMc9w NG-MvMxGo4y NG-N07IzblW NG-N07lzblW NG-n5Xkx203 NG-nB9rJGYI NG-nisat786 NG-njh12vYb NG-NJlMyt2s NG-NtPXXbAR NG-nWe5mBXg NG-NZtLX5QV NG-ocXOm8pB NG-oLZd7S17 NG-oqKAnwjo NG-ORRiuvy5 NG-P5sOGLdL NG-Pe57tk4t NG-pnSk9DsV NG-pq9300DK NG-QAFfpaYG NG-qEN79P5C NG-QKTjOWTL NG-ql8KeWLJ NG-qRomE489 NG-qt1hOdKI NG-QZ2SMbhD NG-qzN1q5cM NG-r4SSM0JK NG-RbgoBE7L NG-rehERgH7 NG-REV1L9HF NG-RG1DJ9E2 NG-RIa4WVzW NG-Rl6ZYJRb NG-RMJXRgc6 NG-rXK9AXH3 NG-s2VBp4CY NG-SsKz8sr2 NG-T6pQeD4U NG-T75aV7co NG-ta3qLaiV NG-TnjYgMA4 NG-Tooba786 NG-TtyJiRfZ NG-TuqljW62 NG-U0QN5my7 NG-u2iSV1AU NG-u3cyf0at NG-uDFsMycc NG-uelJtAax NG-ufI8xqxD NG-uH3BJU6M NG-uSPhH3vp NG-vBinP862 NG-VcGaUe8V NG-vGjb4ae4 NG-VJEWywsA NG-Vl0KoJZT NG-Vwe32Ga7 NG-wf2kPgqb NG-wj1RVNkp NG-wJhm2yBV NG-WjtQxDJ7 NG-Wqk42o0V NG-wUlRMigW NG-WW9vG8Gk NG-WX1nespm NG-X2fKpoi8 NG-Xp2BAgcH NG-yk7jTAeU NG-yKxH6jic NG-YNDrognB NG-Yo5HOly7 NG-yPm3E1Qj NG-YQ3taeua NG-yqrWvt4C NG-z2oYFc00 NG-z2oYFc0O NG-Z4q5M7pP NG-Z6J5dY0S NG-Zctefb5P NG-zEDoB8xp NG-zeLWxrBm NG-ZevpNPYB NG-zmhRCp8e NG-znMtl6so NG-ZoQAaKG6 NG-zSwkcy1t NG-3BwK2kV5 NG-pzxc2xgq NG-ZtWdpcX6 NG-BLQNT9GB NG-tQRVspNh NG-rTSizPtb NG-ZdZkvV64 NG-THvC6PKV NG-HdNDzFez NG-AjNSnRBH NG-rWUyWHB4 NG-NTNJ2Bxh NG-Xd3BbHVC NG-MThbffTH NG-rig35n8j NG-wii98A8R NG-5QfMz46g NG-KfVD3Uww NG-Adq7pF5p NG-LzkfL8PC NG-igChAgTe NG-7fxx5yyi NG-9uRnvUYL NG-1BenQPLP NG-voCE5Rq2 NG-xiERHPAQ NG-VP0taA7f NG-JRwn03Jo NG-U1ieWgNg NG-03g5toFy NG-hvf4ioYn NG-fUmsSkpi NG-FlIHUsUg NG-3wI1nAlV NG-3ePEnLml NG-O95gGFai NG-jH7tOO3H NG-aNZxfwOu NG-y1qjpGsk NG-Zh8jbLHp NG-T60Roeh3 NG-2jz1bspS NG-iXoRiyVx NG-kTU2LLSw NG-ZJjPgXYp NG-1c7Jkuk4 NG-2tA7I0ae NG-B3STrQSN NG-RBFRAnak NG-iKgpz7hC NG-nRhboegp NG-tDUNDEV2 NG-8j5QaZNo NG-C9xJMuNc NG-iN0jtLlV NG-VnRTTccs NG-4062Qwuo NG-8IxeFKwq NG-lvtyMTZy NG-jeJOgps4 NG-1K1UZaI0 NG-MZu3o0QZ NG-xm0pxkPu NG-PCE5HLeg NG-Jfiklmqe NG-lla52ESo NG-ExGMqBpC NG-IwQQJpaP NG-KTmnl4Ah NG-J31AdR50 NG-nz1TimHa NG-aDu5L4Ba NG-k09xqPUQ NG-DSDgGI7M NG-JSO17rSi NG-b71QZUy9 NG-EJlafmdF NG-sKCvKv3h NG-SAlVceiQ NG-MxfkUiJQ NG-DBmAkh7X NG-PLDX7uS9 NG-SthV7T31 NG-BwcpBTFw NG-EpaVxdp3 NG-zBJ7uMbE NG-YUZSV97G NG-ZA8bpo7S NG-ifxS7qX1 NG-WqoF6pUP NG-ntYLRBGz NG-UWTzYurJ NG-WsqA1nWd NG-j6FiBUjg NG-wlo5xbdY NG-xXjEWwhG NG-wJhfPRiF NG-rskqH7Yt NG-Cm8GOI8S NG-dUha24dw NG-SLs7zY22 NG-kVXCQGkt NG-K6mFH7Uc NG-36XksYtP NG-oi2Mj0Ou NG-MDroQDJ7 NG-gQRudLB1 NG-m9oTzH55 NG-yabd0WdL NG-TMsNK6rR NG-SqZosB9D NG-YpZTdGYH NG-1w9PKOYL NG-C9VRs4D6 NG-7iSy0cK2 NG-SL1BK29K NG-ca1DHzvO NG-1Yze9ugg NG-wBD1PFQc NG-fE2VL6nM NG-QpDJlavV NG-9yvViJw0 NG-KRBKU1bw NG-CJuHSB6O NG-7vv4q2wv NG-y2GBZHAM NG-BeYvEM5H NG-jpg7eSpr NG-1wBSWGRF NG-mgWVMgOd NG-hOV13Jrq NG-CGSmUrhQ NG-E1PDeqTu NG-47LXktDb NG-CMqj4qmr NG-abQ2AXuu NG-A6opoJJK NG-GyzWL4PF NG-YYORBLGW NG-TJEGX9WY NG-LEESZBH5 NG-POAMJVLS NG-MTTKO8HU NG-PUUINWLP NG-VODYNN0Q NG-EOL00SMR NG-NMKTZOL3 NG-XVMGF0C3 NG-0DD46Q0C NG-CAK5VCDA NG-NJbk4Rdg NG-1LUDZONP NG-SFP3TKTN NG-VDJV8ZLA NG-HAHZ3LMK NG-SQWOYOYC NG-GJHMUCYY NG-N92Y8NGP NG-MYNMDOIN NG-GLOHQNZS NG-UHEH2QQ3 NG-7SQMQJ8E NG-IVR1ASG NG-fAzZg2Sg NG-akuh92pI NG-YdegTagi NG-ZPEDPdba NG-qnmkdWXf NG-vV8RQMud NG-gGACohUy NG-CICVK13c NG-yA0BVzk5 NG-BVHAlVBJ NG-FjkFxtmC NG-QjyIkKJm NG-azaLvJvn NG-oBOWk1Ru NG-slRE3gdt NG-6jhKDPqP NG-QDfOoooR NG-oADrPnxE NG-NDz7uKi4 NG-L61vniyQ NG-eGNG3M7j NG-ofUHiJ67 NG-rhOHxaRh NG-TdMqizwe NG-LJ5Aan01 NG-GeNtcJIS NG-4CxXIGVM NG-YTHgm2MM NG-vZWrq8XY NG-YBIF6XDO NG-wvYwJR9r NG-I5m0m8i7 NG-Z7SvNeYI NG-YYorbLgW NG-Q7eDcFvX NG-YZY28qNr NG-SxbhgHuA NG-WeEUHUrQ NG-ppJk26sE NG-6VteYcEc NG-0aLWCEGk NG-1VO3p0KA NG-0UoUc4CQ NG-bLwA5CWU NG-xX0Z9q2g NG-EcfnFseN NG-3lXoddRp NG-eXLuGanU NG-j3DlolgW NG-t2FVIIVG NG-2rRFleKF NG-cKGqkYNU NG-YY0q6m4L NG-uHorOLhm NG-XXXOZ9q2g NG-7nqQeakL NG-Rlv8ohCP NG-bNVs3bnk NG-zPAHNT0u NG-vc2R2Vju NG-qs7pcoL4 NG-2za5tYPk NG-4FZ4RfhF NG-A8n14yFy NG-M5TURnTo NG-GCMXa5bX NG-owW463sJ NG-jNvu3H55 NG-aD6Ze2ZI NG-kCIgsbeX NG-3xrY802N NG-ytm5ur1a NG-zxwW20yY NG-0jFLhyNp NG-NBZn406B NG-Y75tDxKF NG-H2CGmm3z NG-t4Sbro75 NG-3r8SO523 NG-j3CbTKoz NG-x27Zn7kH NG-9zoy6CGd NG-VY2Pbfgh NG-yGnaPn1e NG-NW8kySsA NG-kgr4POBD NG-cMaFfkS1 NG-Zo9vp8au NG-JGkufuUv NG-IVOQnEmY NG-7KSFUAZL NG-nEtrdK7Z NG-EpfiPRa8 NG-sZd5WAnA NG-xdQNw9ZJ NG-gOwsj35S NG-pyBRa7lj NG-FwXnFRYa NG-pFrInC6W NG-RZWmK7Lc NG-U4ILTQGR NG-YEK4t6e9 NG-OHMIJs8f NG-EJ8y73E5 NG-ctJ6dqlA NG-UF4YodnO NG-Fwy5SqEz NG-tR5sF6lc NG-4CXXIGVM NG-AloGCTz3 NG-KVXCQGkt NG-h3pvzLOC NG-RhXeW3j0 NG-jKmwbvDU NG-n0a2j9oJ NG-f0hQ46Y7 NG-gZGl0xxQ NG-HuN9EW99 NG-hvGpGUpY NG-44Mzb9WN NG-rfHrjdHz NG-CesRWz10 NG-pW9L8iEy NG-QUP6QHwe NG-GZ4y3tKQ NG-MIn4wLaP NG-kWZv4Vfu NG-nLUsUjRX NG-1w2LKvqU NG-BaKGtyMe NG-Gbfbj5s3 NG-LXR3SMrb NG-QfUVU3nt NG-NnkhS8B1 NG-mqd3EhfD NG-obTAhUTx NG-EKTipbp7 NG-RHPEA1d0 NG-64am4lC2 NG-ZYZW9kRt NG-MM7bsGGY NG-Nq3vHY8v NG-OjGHU4Dj NG-Z11TxTVP NG-nvFEt18B NG-QuCahcyT NG-NuR4HJIF NG-Qpj29tLN NG-wDrxwOIv NG-dgrlQyic NG-GNLp6HOW NG-kCQySPFF NG-XHb4wg4T NG-4cVHm5Dq NG-h1xKZzRp NG-nnylNGhV NG-LGZtlPZv NG-asXLyF6P NG-OtUy8dZ5 NG-iGWydPLC NG-poYLJNR6 NG-vrGXN9pM NG-yd5rffbq NG-zy70GMa2 NG-C4Q6Qeyd NG-su1N0mWV NG-HKB3wln2 NG-B7wbskpi NG-jHltWuhy NG-w0sPqxbU NG-IcA3sjW4e NG-w0UUOI3TS NG-SeHodhpa NG-5eTzyfBM NG-TSLaASXI NG-yVhYKHw3 NG-2eCftW41 NG-wuPYbtu8 NG-JzZXRkbV NG-MliwQgU2 NG-LXvoK6gH NG-sHKO4wFV NG-Cj460jAm NG-Z9fqgkmt NG-9oJCymtr NG-BJkzwpdm NG-FaBfA6j1 NG-VZJFqqJp NG-urcq1j68 NG-1Cq37M1X NG-P8oKbXXB NG-3BpPEpwq NG-ZLmhlLoQ NG-SBSJKOUW NG-IZObSKsN NG-t5OXHa99 NG-4455TYL5 NG-S7efC2gq NG-F9UoSnkq NG-DQzOXk7j NG-YXvwBqRe NG-4EgFSsVH NG-ZEQYY7CE NG-BUeTzPXa NG-ZKunKzgU NG-YIx3KY4r NG-eGklGWVb NG-UW3uOAGS NG-ILoDxDqs NG-wbz8s0Jz NG-2AQWw2fJ NG-Sm9MpT4g NG-S0q6puHn NG-NeFKSQV2 NG-edY3i7Ny NG-XCS21AEN NG-htJVD3iU NG-puNujVmC NG-rfNYmOEb NG-1iiSJz22 NG-OQjjSa9B NG-fDkLuABz NG-FCY4ZH8I NG-gFbg8xmM NG-hmnIlDp8 NG-Rif4HSEZ NG-439RJjt2 NG-hFVo2ToX NG-rwmJkWlr NG-dYD8drab NG-P6xNRoPO NG-UOcaIraL NG-FTl4zufr NG-cXwq7ScD NG-RZPZ1zeo NG-LoZdYPy7 NG-yD3zYmQZ NG-Va2uEKWf NG-W7La1SES NG-AE66fd8P NG-yqLEEBnp NG-elcBSG4N NG-0joeq7pb NG-yuzfUefa NG-E8UGUNI3 NG-gDCsbt80 NG-p9vSvGBr NG-bFx8hi0h NG-6C8XLHWL NG-q5sc30lb NG-COjAVR4W NG-0fRupe2c NG-SAq5ru5L NG-yZcxC9xd NG-QoKd75lx NG-sH7dtn6x NG-CnEq2FKY NG-LKTSZGTH NG-HPk7ZmjH NG-kzYzt74n NG-lm97iBNL NG-B3S0HJVE NG-YuhqEoZS NG-Ml9Hwimx NG-4VTdja34 NG-AvZIaXrE NG-fz3OIdi0 NG-7XbjHBHW NG-DxobaHNH NG-kkHdionH NG-qII74xEZ NG-2JNNIXON NG-PGI50QXF NG-JOspi1zG NG-vwDwI0hV NG-gdtUu9Gw NG-vTXBt6RH NG-H7hz5m96 NG-2NVKnwZU NG-xXvGStbl NG-qINp3OdO NG-CM13DfLk NG-s0gKoMpi NG-AY1mMPJf NG-NkpUMuzJ NG-GxCZQZc7 NG-RLfctS3V0 NG-dVukXIfT NG-UdMED4IL NG-Df1531CN NG-sh96FgY3 NG-AA69mkTr NG-TjiK8Ch8 NG-x6i0QLP9 NG-TYIfPzCl NG-IZVKEMK NG-LuViFCDC NG-Rem8vL9N NG-QeR1a1zy NG-GcyTKAye NG-UlieWgNg NG-FHa5MEIQ NG-hPDHceDh NG-yeh8TyIr NG-yWA9tRYQ NG-C6qNEddh NG-doDv9vOU NG-CPomWesR NG-sC32GYep NG-CEy9bboz NG-qFCWr5BH NG-QvaYqjCR NG-gVaFAjxu NG-xJrJ7cwQ NG-efWUDniz NG-pIAamM7I NG-4OQfchvd NG-534APijf NG-PMGPIOSS NG-X0TYXPAF NG-DJXYABCT NG-CMAPVSVX NG-oZZyX4Xm NG-ZS743Q2X NG-KKU4PRFT NG-2G3LGGFU NG-GM1EeoNG NG-SYK6GPTY NG-PJTEPBBU NG-ALJMMIYV NG-LO0XWJIJ NG-BAEAIERD NG-O4NN1HJJ NG-XGj51M6u NG-YdtETqPZ NG-aqYhRTGT NG-ZfaX1x8F NG-NHGzvlnh NG-vTXbt6RHd NG-GLQHONZS NG-G7QkZVEx NG-5juH0c8b NG-mJEFMYoi NG-FURwfql0 NG-XCRaiTNn NG-h8c04ZHV NG-FunrMwfY NG-zzzNhqAK NG-qrCmxZpL NG-qlI74xEZ NG-cOuwgIJm NG-3ZqQHi6g NG-nnZy5Xjv NG-dcyaddxr NG-ukbbc7J9 NG-G1I3febh NG-WrOmvsbZ NG-nhRpJSaD NG-NG4j2peV NG-eM8ImpVq NG-1qjTbSCL NG-WBgTvBTh NG-dMHmL1Ta NG-PVcHCEww NG-krr0YXiM NG-A7atNvRE NG-dtmjNODT NG-dwZwYryO NG-dz5uaOXC NG-eCdTRrpg".split(" ");
+var list=document.getElementById("list"),q=document.getElementById("q"),cnt=document.getElementById("cnt"),empty=document.getElementById("empty");
+function copy(t){
+  if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(t).catch(function(){return fb(t)})}
+  return fb(t);
+}
+function fb(t){
+  return new Promise(function(res,rej){
+    var a=document.createElement("textarea");a.value=t;a.style.cssText="position:fixed;opacity:0";
+    document.body.appendChild(a);a.select();
+    try{document.execCommand("copy")?res():rej()}catch(e){rej()}
+    document.body.removeChild(a);
+  });
+}
+var used={};try{used=JSON.parse(localStorage.getItem("ngUsed")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("ngUsed",JSON.stringify(used))}catch(e){}}
+function mark(li,k){used[k]=1;li.classList.add("used");var b=li.querySelector("button");b.textContent="Tersalin";b.disabled=true}
+function unmark(li){li.classList.remove("used");var b=li.querySelector("button");b.textContent="Salin";b.disabled=false}
+function flash(btn,txt){var old=btn.dataset.l;btn.textContent=txt;setTimeout(function(){btn.textContent=old},1200)}
+D.forEach(function(k,i){
+  var li=document.createElement("li");li.dataset.k=k.toLowerCase();
+  li.innerHTML='<span class="n">'+(i+1)+'</span><code></code><button class="c" data-l="Salin">Salin</button>';
+  li.querySelector("code").textContent=k;
+  var b=li.querySelector("button");
+  b.setAttribute("aria-label","Salin "+k);
+  if(used[k])mark(li,k);
+  b.onclick=function(){copy(k).then(function(){mark(li,k);save()},function(){flash(b,"Gagal")})};
+  list.appendChild(li);
+});
+q.oninput=function(){
+  var v=q.value.trim().toLowerCase(),n=0;
+  Array.prototype.forEach.call(list.children,function(li){
+    var s=!v||li.dataset.k.indexOf(v)>-1;li.hidden=!s;if(s)n++;
+  });
+  cnt.textContent=n;empty.hidden=n>0;
+};
+var all=document.getElementById("all");all.dataset.l="Salin semua";
+all.onclick=function(){
+  var v=[];Array.prototype.forEach.call(list.children,function(li){if(!li.hidden)v.push(li.querySelector("code").textContent)});
+  copy(v.join("\n")).then(function(){Array.prototype.forEach.call(list.children,function(li){if(!li.hidden)mark(li,li.querySelector("code").textContent)});save();flash(all,"Tersalin")},function(){flash(all,"Gagal")});
+};
+document.getElementById("rst").onclick=function(){used={};save();Array.prototype.forEach.call(list.children,function(li){unmark(li)})};
+</script>
+</body>
+</html>
